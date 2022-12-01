@@ -1,0 +1,22 @@
+{
+    {
+        "editor.tabSize": 2,
+        "files.autoSave": "onFocusChange",
+        "editor.formatOnSave": true,
+        "editor.wordWrap": "on",
+        "editor.parameterHints.enabled": false,
+        "explorer.openEditors.visible": 0,
+        "ruby.useLanguageServer": true,
+        "ruby.lint": { "rubocop": false },
+        "ruby.format": false,
+        "[vue]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[javascript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[javascriptreact]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        }
+      }
+}
