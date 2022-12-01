@@ -1,12 +1,7 @@
-module Reportable
-  def send_report
-    p "about to send the report"
-    # some logic here
-    p "definitely just sent that report"
-  end
-end
-
-
+require_relative "./reportable.rb"
+require_relative "./employee.rb"
+require_relative "./manager.rb"
+require_relative "./intern.rb"
 
 employee1 = Employee.new({:first_name => "Majora", :last_name => "Carter", :salary => 80000, :active => true})
 employee1.print_info
@@ -21,14 +16,11 @@ employee2.give_annual_raise
 employee2.print_info
 
 
-
 #  a manager can do everything an employee can do, and can also send reports
 # keep track of who each manager is managing
 
 
 # inheritance
-
-
 
 manager1 = Manager.new(
   first_name: "Manny", 
@@ -46,7 +38,6 @@ manager1.send_report
 
 p "here are the employees"
 p "there were the employees"
-
 
 
 p manager1.employees
