@@ -6,31 +6,7 @@ module Reportable
   end
 end
 
-class Employee
-  attr_reader :first_name, :last_name, :salary, :active, :middle_name
-  attr_writer :first_name, :active
-  # def first_name 
-  #   @first_name
-  # end
-  
-  def initialize(input_options)
-    # input_options == {:first_name => "Majora", :last_name => "Carter", :salary => 80000, :active => true}
-    @first_name = input_options[:first_name]
-    @middle_name = input_options[:middle_name]
-    @last_name = input_options[:last_name]
-    @salary = input_options[:salary]
-    @active = input_options[:active]
-  end
 
-  def print_info    
-    p "#{first_name} #{last_name} makes $#{salary} per year."
-  end
-
-  def give_annual_raise
-    # @salary = @salary * 1.05
-    @salary *= 1.05
-  end
-end
 
 employee1 = Employee.new({:first_name => "Majora", :last_name => "Carter", :salary => 80000, :active => true})
 employee1.print_info
@@ -52,37 +28,6 @@ employee2.print_info
 
 # inheritance
 
-class Manager < Employee
-  include Reportable
-  
-  attr_reader :employees
-
-  def initialize(input_options)    
-    super
-    @employees = input_options[:employees]
-  end
-
-  def give_all_raises
-    p "giving everyone a raise"
-    # i = 0
-    # while i < @employees.length
-    #   @employees[i].give_annual_raise
-    #   i += 1
-    # end 
-
-    @employees.each do |employee|
-      employee.give_annual_raise
-    end
-    # p @employees[0].give_annual_raise
-    # p @employees[1].give_annual_raise
-  end
-
-  def fire_all_employees
-    @employees.each do |employee|
-      employee.active = false
-    end
-  end
-end
 
 
 manager1 = Manager.new(
@@ -117,8 +62,11 @@ p manager1.employees
 
 
 # fire all employees
+intern = Intern.new(first_name: "Ingrid", last_name: "Smith", salary: 0, active: true)
+
+intern.print_info
+intern.send_report
 
 
-# intern can do everything an employee can do, and can also send reports
 
 
